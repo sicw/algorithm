@@ -8,21 +8,9 @@ import java.util.Stack;
 
 public class BinaryTree {
 
-    public Node createTree(){
-        Node e = new Node("E",null,null);
-        Node f = new Node("F",e,null);
-        Node a = new Node("A",null,null);
-        Node d = new Node("D",a,f);
-        Node h = new Node("H",null,null);
-        Node z = new Node("Z",null,null);
-        Node m = new Node("M",h,z);
-        Node root = new Node("G",d,m);
-        return root;
-    }
-
     @Test
     public void testCase(){
-        Node root = createTree();
+        Node root = Node.createTree();
         front(root);
         System.out.println();
         front2(root);
@@ -142,21 +130,6 @@ public class BinaryTree {
                     queue.add(node.right);
                 }
             }
-        }
-    }
-
-    private class Node{
-        private Node left;
-        private Node right;
-        private String data;
-        public Node(String data,Node left,Node right){
-            this.data = data;
-            this.left = left;
-            this.right = right;
-        }
-        @Override
-        public String toString() {
-            return data;
         }
     }
 }
